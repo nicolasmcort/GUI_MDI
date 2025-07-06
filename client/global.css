@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * TaskFlow Pro Dark Theme
+   * Custom color palette for the Critical Path Management System
+   */
+  :root {
+    /* Main backgrounds - dark theme only */
+    --background: 239 71% 9%; /* #0F0F23 */
+    --foreground: 225 9% 91%; /* #E5E7EB */
+
+    --card: 217 47% 18%; /* #16213E */
+    --card-foreground: 225 9% 91%; /* #E5E7EB */
+
+    --popover: 217 47% 18%; /* #16213E */
+    --popover-foreground: 225 9% 91%; /* #E5E7EB */
+
+    /* Primary - TaskFlow Pro teal */
+    --primary: 177 100% 42%; /* #00D4AA */
+    --primary-foreground: 239 71% 9%; /* #0F0F23 */
+
+    /* Secondary - muted grays */
+    --secondary: 217 47% 18%; /* #16213E */
+    --secondary-foreground: 225 9% 91%; /* #E5E7EB */
+
+    --muted: 223 28% 18%; /* #1A1A2E */
+    --muted-foreground: 220 9% 62%; /* #9CA3AF */
+
+    --accent: 177 100% 42%; /* #00D4AA */
+    --accent-foreground: 239 71% 9%; /* #0F0F23 */
+
+    /* Status colors */
+    --destructive: 0 73% 41%; /* #DC2626 */
+    --destructive-foreground: 0 0% 98%;
+
+    --warning: 25 95% 53%; /* #EA580C */
+    --warning-foreground: 0 0% 98%;
+
+    --info: 221 83% 53%; /* #2563EB */
+    --info-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 210 15% 23%; /* #374151 */
+    --input: 210 15% 23%; /* #374151 */
+    --input-background: 239 71% 9%; /* #0F0F23 */
+    --ring: 177 100% 42%; /* #00D4AA */
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific */
+    --sidebar-background: 223 28% 18%; /* #1A1A2E */
+    --sidebar-foreground: 220 9% 62%; /* #9CA3AF */
+    --sidebar-primary: 177 100% 42%; /* #00D4AA */
+    --sidebar-primary-foreground: 239 71% 9%; /* #0F0F23 */
+    --sidebar-accent: 217 47% 18%; /* #16213E */
+    --sidebar-accent-foreground: 177 100% 42%; /* #00D4AA */
+    --sidebar-border: 217 47% 18%; /* #16213E */
+    --sidebar-ring: 177 100% 42%; /* #00D4AA */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .taskflow-input {
+    @apply bg-input-background border-border text-foreground placeholder:text-muted-foreground;
+  }
+
+  .taskflow-card {
+    @apply bg-card border-border;
+  }
+
+  .status-badge {
+    @apply px-2 py-1 rounded text-xs font-medium text-white;
+  }
+
+  .status-high {
+    @apply bg-warning;
+  }
+
+  .status-medium {
+    @apply bg-info;
+  }
+
+  .status-critical {
+    @apply bg-destructive;
+  }
+
+  .status-low {
+    @apply bg-muted-foreground;
+  }
+}
